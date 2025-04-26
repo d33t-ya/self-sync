@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,25 +62,24 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Future You custom colors
 				futurepurple: {
-					DEFAULT: '#9b87f5',
-					dark: '#6E59A5',
-					light: '#E5DEFF',
+					DEFAULT: 'hsl(var(--primary))',
+					dark: 'hsl(260 70% 60%)',
+					light: 'hsl(260 85% 85%)'
 				},
 				futureblue: {
-					DEFAULT: '#33C3F0',
-					dark: '#0EA5E9',
-					light: '#D3E4FD',
+					DEFAULT: 'hsl(var(--secondary))',
+					dark: 'hsl(220 60% 45%)',
+					light: 'hsl(220 85% 75%)'
 				},
 				futuresoft: {
 					green: '#F2FCE2',
 					yellow: '#FEF7CD',
 					orange: '#FEC6A1',
-					purple: '#E5DEFF',
+					purple: 'hsl(260 85% 96%)',
 					pink: '#FFDEE2',
 					peach: '#FDE1D3',
-					blue: '#D3E4FD',
+					blue: 'hsl(220 85% 96%)',
 					gray: '#F1F0FB',
 				},
 			},
@@ -126,8 +124,9 @@ export default {
 				'fade-in': 'fade-in 0.3s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out',
 				'scale-in': 'scale-in 0.2s ease-out',
-				'float': 'float 3s ease-in-out infinite',
-				'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'bounce': 'bounce 0.8s infinite',
+				'pulse-soft': 'pulse-soft 2s infinite',
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],

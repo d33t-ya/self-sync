@@ -1,14 +1,14 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/components/ui/use-toast";
 import Navbar from "@/components/Navbar";
+import AvatarCustomizer from "@/components/AvatarCustomizer";
 
 const AvatarCreation = () => {
   const [avatarName, setAvatarName] = useState("");
@@ -65,7 +65,7 @@ const AvatarCreation = () => {
               <TabsTrigger value="custom">Customize</TabsTrigger>
             </TabsList>
             
-            <TabsContent value="choose" className="space-y-6">
+            <TabsContent value="choose">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {avatarOptions.map((avatar) => (
                   <div 
@@ -99,20 +99,7 @@ const AvatarCreation = () => {
             
             <TabsContent value="custom">
               <Card>
-                <CardContent className="pt-6">
-                  <div className="space-y-4">
-                    <div className="text-center mb-4">
-                      <p>Upload your own image for your future self (coming soon)</p>
-                    </div>
-                    
-                    <div className="border-2 border-dashed border-border rounded-xl p-12 text-center">
-                      <p className="text-muted-foreground">Feature coming soon!</p>
-                      <p className="text-xs text-muted-foreground mt-2">
-                        You'll be able to upload your own images or create an AI-generated avatar
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
+                <AvatarCustomizer />
               </Card>
             </TabsContent>
           </Tabs>

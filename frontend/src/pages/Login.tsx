@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -35,17 +34,6 @@ const Login = () => {
         variant: "destructive",
       });
     }
-  };
-
-  const handleGuestLogin = () => {
-    toast({
-      title: "Entering as guest 👋",
-      description: "You can explore the app with limited features.",
-    });
-    
-    setTimeout(() => {
-      navigate("/dashboard");
-    }, 1500);
   };
 
   return (
@@ -94,23 +82,6 @@ const Login = () => {
                 Log In
               </Button>
             </form>
-            
-            <div className="relative my-6">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-border"></span>
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">Or</span>
-              </div>
-            </div>
-            
-            <Button 
-              variant="outline" 
-              className="w-full"
-              onClick={handleGuestLogin}
-            >
-              Continue as Guest
-            </Button>
           </CardContent>
           
           <CardFooter className="text-center">

@@ -69,7 +69,7 @@ const Landing = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&w=800&q=80" 
+                  src="././public/LOGO.png" 
                   alt="Peaceful garden scene" 
                   className="relative z-10 rounded-3xl shadow-xl w-full max-w-md mx-auto animate-float"
                 />

@@ -44,7 +44,7 @@ const App = () => {
 
             {/* Authentication Routes */}
             <Route path="/login" element={!authUser ? <Login /> : <Navigate to="/dashboard" />} />
-            <Route path="/signup" element={!authUser ? <Signup /> : <Navigate to="/dashboard" />} />
+            <Route path="/signup" element={!authUser ? <Signup /> : <Navigate to="/avatar-creation" />} />
 
             {/* Dashboard and Protected Routes */}
             <Route path="/dashboard" element={authUser ? <Dashboard /> : <Navigate to="/login" />} />

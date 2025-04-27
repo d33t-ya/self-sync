@@ -26,7 +26,7 @@ const Nutritionist = () => {
     {
       id: "welcome",
       role: "ai",
-      content: "Hello! I'm your AI nutritionist. How can I help you with your nutrition and wellness questions today?",
+      content: "Hello, I'm Dr. Halsey! How can I help you with your nutrition and wellness questions today?",
       timestamp: new Date(),
     },
   ]);
@@ -91,14 +91,22 @@ const Nutritionist = () => {
       let response = "";
       const lowerInput = inputMessage.toLowerCase();
       
-      if (lowerInput.includes("diet") || lowerInput.includes("weight")) {
-        response = "I understand you're interested in discussing diet and weight. Remember, it's important to approach these topics from a health perspective rather than appearance. What specific aspect would you like to focus on?";
-      } else if (lowerInput.includes("body image") || lowerInput.includes("appearance")) {
-        response = "Body image is so important to our overall wellbeing. It's completely normal to have days where you feel less confident. Let's talk about some strategies that might help nurture a more positive relationship with your body. 💖";
-      } else if (lowerInput.includes("healthy") || lowerInput.includes("nutrition")) {
-        response = "Great question about nutrition! Healthy eating is about nourishing your body and enjoying your food, not restriction. What kinds of foods do you currently enjoy?";
+      if (lowerInput.includes("procrastination") || lowerInput.includes("motivation")) {
+        response = "Oh sweetie, future you didn’t become iconic by scrolling TikTok all day. 🚀 Get up, get it done, and watch me flex on your haters later.";
+      } else if (lowerInput.includes("diet") || lowerInput.includes("eating habits")) {
+        response = "Future you does NOT have time for fad diets and guilt trips. 🍕 We fuel, we enjoy, we thrive. Now pass me a snack, please.";
+      } else if (lowerInput.includes("relationships") || lowerInput.includes("friends")) {
+        response = "Babe, future you is surrounded by people who water your soul, not drain it. 🌸 Choose wisely. Block unwise choices faster than you blink.";
+      } else if (lowerInput.includes("career") || lowerInput.includes("job")) {
+        response = "Your future boss energy? It’s criminally good. 💼✨ Keep stacking those wins. Your LinkedIn glow-up is coming, and it’s gonna slap.";
+      } else if (lowerInput.includes("money") || lowerInput.includes("finance")) {
+        response = "Future rich you is sending this urgent memo: Save, invest, and stop treating Target like a personal playground. 💸🛒 Future you has yachts to buy.";
+      } else if (lowerInput.includes("creativity") || lowerInput.includes("passion project")) {
+        response = "That little spark you’re ignoring? Yeah, it’s your future legacy calling. 🔥 Pick up the call, Picasso.";
+      } else if (lowerInput.includes("healing") || lowerInput.includes("growth")) {
+        response = "Healing is messy, but baby, future you is STRAIGHT-UP GLORIOUS because of it. 🦋 Cry, scream, journal — just don’t quit.";
       } else {
-        response = "Thank you for sharing that with me. Would you like to explore how this relates to your overall wellness goals? I'm here to support you in creating sustainable, gentle habits.";
+        response = "Whatever chaos you’re dealing with today, future you already handled it like a baddie. 👑 Stay dramatic, but stay moving.";
       }
 
       const aiMsg: Message = {
@@ -181,14 +189,14 @@ const Nutritionist = () => {
               <div className="flex items-center gap-3">
                 <Avatar>
                   <AvatarImage 
-                    src="/mii-avatar.png" 
+                    src="././public/H4_Halsey_Profile.webp" 
                     alt="AI Nutritionist"
                     className="bg-gradient-to-br from-futuresoft-orange via-orange-400 to-futuresoft-pink"
                   />
                   <AvatarFallback className="bg-gradient-to-br from-futuresoft-orange to-futuresoft-pink">AI</AvatarFallback>
                 </Avatar>
                 <div>
-                  <CardTitle className="text-base">Nutritionist AI</CardTitle>
+                  <CardTitle className="text-base">Dr. Halsey</CardTitle>
                   <p className="text-xs text-muted-foreground">Online • Replies instantly</p>
                 </div>
               </div>

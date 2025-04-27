@@ -11,7 +11,7 @@ interface DashboardLayoutProps {
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const location = useLocation();
-  const [avatarName] = useState("Future You");
+  const [avatarName] = useState("Self-Sync");
   
   const navItems = [
     { path: "/dashboard", icon: <Heart className="w-5 h-5" />, label: "Dashboard" },

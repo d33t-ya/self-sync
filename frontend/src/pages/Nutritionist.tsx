@@ -1,11 +1,10 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useToast } from "@/components/ui/use-toast";
-import { MessageSquare, SendHorizontal, BookOpen, Info } from "lucide-react";
+import { MessageSquare, SendHorizontal, BookOpen, Info, Mic, MicOff } from "lucide-react";
 import DashboardLayout from "@/components/DashboardLayout";
 
 interface Message {
@@ -37,8 +36,8 @@ const Nutritionist = () => {
   const [currentInsight, setCurrentInsight] = useState<ResearchInsight | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
+  const [isRecording, setIsRecording] = useState(false);
 
-  // Mock insights
   const researchInsights: ResearchInsight[] = [
     {
       id: "i1",
@@ -60,7 +59,6 @@ const Nutritionist = () => {
     },
   ];
 
-  // Scroll to bottom when messages change
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -73,7 +71,6 @@ const Nutritionist = () => {
     e.preventDefault();
     if (!inputMessage.trim()) return;
 
-    // Add user message
     const userMsg: Message = {
       id: `user-${Date.now()}`,
       role: "user",
@@ -84,16 +81,13 @@ const Nutritionist = () => {
     setInputMessage("");
     setIsTyping(true);
 
-    // Mock AI reply after delay (simulating API call)
     setTimeout(() => {
-      // Show research insight popup randomly
       if (Math.random() > 0.5) {
         const randomInsight = researchInsights[Math.floor(Math.random() * researchInsights.length)];
         setCurrentInsight(randomInsight);
         setShowInsight(true);
       }
 
-      // Mock response based on user input
       let response = "";
       const lowerInput = inputMessage.toLowerCase();
       
@@ -134,7 +128,6 @@ const Nutritionist = () => {
       description: "Your conversation summary has been saved to your profile.",
     });
 
-    // In a real app, this would create a document with the summary
     console.log("Generated summary from:", userMessages);
   };
 
@@ -143,33 +136,56 @@ const Nutritionist = () => {
     setCurrentInsight(null);
   };
 
+  const toggleRecording = () => {
+    setIsRecording(!isRecording);
+    toast({
+      title: isRecording ? "Recording stopped" : "Recording started",
+      description: isRecording 
+        ? "Your conversation recording has been saved."
+        : "Recording your conversation with the nutritionist.",
+    });
+  };
+
   return (
     <DashboardLayout>
       <div className="flex flex-col h-[calc(100vh-120px)] md:h-[calc(100vh-80px)]">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-2xl font-bold flex items-center gap-2">
-            <MessageSquare className="text-futurepurple" />
+            <MessageSquare className="text-primary" />
             Nutritionist Chat
           </h1>
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={generateSessionSummary}
-            className="flex items-center gap-2"
-          >
-            <BookOpen className="h-4 w-4" />
-            Generate Summary
-          </Button>
+          <div className="flex gap-2">
+            <Button 
+              variant="outline" 
+              size="icon"
+              onClick={toggleRecording}
+              className={isRecording ? "text-accent hover:text-accent" : ""}
+            >
+              {isRecording ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={generateSessionSummary}
+              className="flex items-center gap-2"
+            >
+              <BookOpen className="h-4 w-4" />
+              Generate Summary
+            </Button>
+          </div>
         </div>
 
         <div className="flex-1 flex gap-4">
-          {/* Main chat area */}
           <Card className="flex-1 flex flex-col overflow-hidden">
             <CardHeader className="border-b py-3">
               <div className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&w=100&q=80" />
-                  <AvatarFallback className="bg-futureblue text-white">AI</AvatarFallback>
+                  <AvatarImage 
+                    src="/mii-avatar.png" 
+                    alt="AI Nutritionist"
+                    className="bg-gradient-to-br from-futuresoft-orange via-orange-400 to-futuresoft-pink"
+                  />
+                  <AvatarFallback className="bg-gradient-to-br from-futuresoft-orange to-futuresoft-pink">AI</AvatarFallback>
                 </Avatar>
                 <div>
                   <CardTitle className="text-base">Nutritionist AI</CardTitle>
@@ -229,7 +245,6 @@ const Nutritionist = () => {
             </form>
           </Card>
           
-          {/* Research insights sidebar - only visible on md+ screens */}
           <Card className="w-80 hidden md:flex flex-col">
             <CardHeader className="py-3 border-b">
               <CardTitle className="text-base flex items-center gap-2">
@@ -256,7 +271,6 @@ const Nutritionist = () => {
           </Card>
         </div>
         
-        {/* Research insight popup for mobile */}
         {showInsight && currentInsight && (
           <div className="fixed inset-0 bg-background/80 flex items-center justify-center p-4 z-50">
             <Card className="w-full max-w-md">

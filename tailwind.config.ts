@@ -25,27 +25,24 @@ export default {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: "hsl(136, 50%, 75%)",
-          foreground: "hsl(136, 20%, 25%)"
+          DEFAULT: "#71bc00",
+          foreground: "#ffffff"
         },
         secondary: {
-          DEFAULT: "hsl(280, 50%, 75%)",
-          foreground: "hsl(280, 20%, 25%)"
+          DEFAULT: "#782b7",
+          foreground: "#ffffff"
         },
         accent: {
-          DEFAULT: "hsl(35, 40%, 85%)",
-          foreground: "hsl(35, 20%, 25%)"
+          DEFAULT: "#c9a4f5",
+          foreground: "#000000"
         },
         futuresoft: {
-          green: "#D8ECD0",
-          yellow: "#EDE3CD",
-          brown: "#D4C5B9",
-          purple: "#E5DEFF",
-          pink: "#FFE8E8",
-          peach: "#FFE5D3",
-          blue: "#E0E8FF",
-          gray: "#F1F0FB",
-        },
+          orange: "#f4932b",
+          purple: "#782b7",
+          green: "#71bc00",
+          "light-purple": "#c9a4f5",
+          pink: "#ffa3c6",
+        }
       },
       borderRadius: {
         lg: 'var(--radius)',

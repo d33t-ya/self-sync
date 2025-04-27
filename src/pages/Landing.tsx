@@ -1,7 +1,9 @@
+
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import { Heart, Award, Smile, Calendar } from "lucide-react";
+
 const Landing = () => {
   const navigate = useNavigate();
   const features = [{
@@ -21,7 +23,9 @@ const Landing = () => {
     title: "Expert Guidance",
     description: "Connect with AI-powered nutrition and wellness advice tailored to your needs."
   }];
-  return <div className="min-h-screen flex flex-col bg-background">
+  
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-1">
@@ -47,7 +51,11 @@ const Landing = () => {
             <div className="flex-1">
               <div className="relative">
                 <div className="absolute inset-0 bg-futurepurple/20 blur-3xl rounded-full"></div>
-                <img alt="Future You visualization" src="npx @builder.io/dev-tools@latest code --url \"https://builder.io/fiddle/3c07ce2857244fa08581d49f72838eef?fromFigma=true\" --spaceId 327829d0bcad4451ba93088a3a351915" className="npx @builder.io/dev-tools@latest code --url \"https://builder.io/fiddle/3c07ce2857244fa08581d49f72838eef?fromFigma=true\" --spaceId 327829d0bcad4451ba93088a3a351915" />
+                <img 
+                  alt="Future You visualization" 
+                  src="/placeholder.svg" 
+                  className="relative z-10 w-full h-auto rounded-lg shadow-xl" 
+                />
               </div>
             </div>
           </div>
@@ -58,11 +66,13 @@ const Landing = () => {
           <div className="max-w-7xl mx-auto">
             <h2 className="future-subtitle text-center mb-12">How Future You Helps</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => <div key={index} className="future-card">
+              {features.map((feature, index) => (
+                <div key={index} className="future-card">
                   <div className="mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -116,6 +126,8 @@ const Landing = () => {
           <p className="mt-2">Made with 💜 for better mental health and body image.</p>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Landing;

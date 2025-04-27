@@ -1,4 +1,5 @@
 
+
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
@@ -157,3 +158,4 @@ const Landing = () => {
 };
 
 export default Landing;
+

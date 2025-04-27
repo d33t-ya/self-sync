@@ -180,8 +180,12 @@ const Nutritionist = () => {
             <CardHeader className="border-b py-3">
               <div className="flex items-center gap-3">
                 <Avatar>
-                  <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&w=100&q=80" />
-                  <AvatarFallback className="bg-futureblue text-white">AI</AvatarFallback>
+                  <AvatarImage 
+                    src="/mii-avatar.png" 
+                    alt="AI Nutritionist"
+                    className="bg-gradient-to-br from-futuresoft-orange via-orange-400 to-futuresoft-pink"
+                  />
+                  <AvatarFallback className="bg-gradient-to-br from-futuresoft-orange to-futuresoft-pink">AI</AvatarFallback>
                 </Avatar>
                 <div>
                   <CardTitle className="text-base">Nutritionist AI</CardTitle>

@@ -6,24 +6,30 @@ import { Heart, Award, Smile, Calendar } from "lucide-react";
 
 const Landing = () => {
   const navigate = useNavigate();
-  const features = [{
-    icon: <Heart className="h-8 w-8 text-futurepurple" />,
-    title: "Self-Care Focus",
-    description: "Build healthy habits and nurture your mental wellness with gentle, affirming guidance."
-  }, {
-    icon: <Award className="h-8 w-8 text-futureblue" />,
-    title: "Achievement System",
-    description: "Complete quests and track your progress with a supportive gamification approach."
-  }, {
-    icon: <Smile className="h-8 w-8 text-futurepurple" />,
-    title: "Daily Check-ins",
-    description: "Reflect on your day and track your emotional wellbeing with easy-to-use tools."
-  }, {
-    icon: <Calendar className="h-8 w-8 text-futureblue" />,
-    title: "Expert Guidance",
-    description: "Connect with AI-powered nutrition and wellness advice tailored to your needs."
-  }];
-  
+
+  const features = [
+    {
+      icon: <Heart className="h-8 w-8 text-futurepurple" />,
+      title: "Self-Care Focus",
+      description: "Build healthy habits and nurture your mental wellness with gentle, affirming guidance."
+    },
+    {
+      icon: <Award className="h-8 w-8 text-futureblue" />,
+      title: "Achievement System",
+      description: "Complete quests and track your progress with a supportive gamification approach."
+    },
+    {
+      icon: <Smile className="h-8 w-8 text-futurepurple" />,
+      title: "Daily Check-ins",
+      description: "Reflect on your day and track your emotional wellbeing with easy-to-use tools."
+    },
+    {
+      icon: <Calendar className="h-8 w-8 text-futureblue" />,
+      title: "Expert Guidance",
+      description: "Connect with AI-powered nutrition and wellness advice tailored to your needs."
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
@@ -40,10 +46,18 @@ const Landing = () => {
                 self-reflection, and gentle habit building. 💖
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-                <Button className="future-button border-0" size="lg" onClick={() => navigate('/signup')}>
+                <Button 
+                  className="future-button border-0" 
+                  size="lg"
+                  onClick={() => navigate('/signup')}
+                >
                   Start Your Journey
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => navigate('/login')}>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => navigate('/login')}
+                >
                   Log In
                 </Button>
               </div>
@@ -52,9 +66,9 @@ const Landing = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-futurepurple/20 blur-3xl rounded-full"></div>
                 <img 
+                  src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&w=800&q=80" 
                   alt="Future You visualization" 
-                  src="/placeholder.svg" 
-                  className="relative z-10 w-full h-auto rounded-lg shadow-xl" 
+                  className="relative z-10 rounded-3xl shadow-xl w-full max-w-md mx-auto animate-float"
                 />
               </div>
             </div>
@@ -113,7 +127,11 @@ const Landing = () => {
               Your future self is waiting. Start your journey with a free account and 
               discover the supportive companion that will guide you toward your best self. ✨
             </p>
-            <Button className="future-button border-0" size="lg" onClick={() => navigate('/signup')}>
+            <Button 
+              className="future-button border-0" 
+              size="lg"
+              onClick={() => navigate('/signup')}
+            >
               Create Your Avatar
             </Button>
           </div>
